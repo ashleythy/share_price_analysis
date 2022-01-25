@@ -12,6 +12,8 @@ import itertools
 import os 
 import matplotlib.pyplot as plt 
 
+from typing import Tuple
+
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -55,7 +57,7 @@ def correlate(
     price: str = 'close',
     start_ymd: str = '1000-01-01',
     end_ymd: str = '3000-01-01',
-    interval: list[str, int] = ['m', 1]
+    interval: Tuple[str, int] = ('m', 1)
     ):
     """
        Calculates pearson's correlation scores between all asset pairs within
