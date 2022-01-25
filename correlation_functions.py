@@ -68,7 +68,7 @@ def correlate(
           price: str - choose from open, high, low, close
           start_ymd: str - start date with '%Y-%m-%d' format
           end_ymd: str - end date with '%Y-%m-%d' format
-          interval: list[str, int] - break down correlations by specified intervals
+          interval: Tuple[str, int] - break down correlations by specified intervals
              - str: year, month, day, hour - 'y', 'm', 'd', 'h', '-'
              - int: one year, two years, one month, two months etc - 1, 2, 3
     """
