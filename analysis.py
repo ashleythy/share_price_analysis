@@ -161,14 +161,24 @@ def correlate(
 ########################################################################################
 ########################################################################################
 # Third function for regression analysis
-def regressor(
+def ols_regressor(
     df: pd.DataFrame,
     price: str = 'close',
     start_ymd: str = '1000-01-01',
     end_ymd: str = '3000-01-01',
     ):
     """
-       Produces the OLS Regression Summary Table
+       Calculates pearson's correlation scores between all asset pairs within
+       specified time frame and broken down by specified time interval
+       
+       Input:
+          df: pd.DataFrame - dataframe from import_datasets()
+          price: str - choose from open, high, low, close
+          start_ymd: str - start date with '%Y-%m-%d' format
+          end_ymd: str - end date with '%Y-%m-%d' format
+          interval: Tuple[str, int] - break down correlations by specified intervals
+             - str: year, month, day, hour - 'y', 'm', 'd', 'h', '-'
+             - int: one year, two years, one month, two months etc - 1, 2, 3
     """
     def preprocess(df, price, start_ymd, end_ymd):
         # Filter dates
