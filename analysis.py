@@ -161,14 +161,14 @@ def correlate(
 ########################################################################################
 ########################################################################################
 # Third function for regression analysis
-def regressor(
+def ols_regressor(
     df: pd.DataFrame,
     price: str = 'close',
     start_ymd: str = '1000-01-01',
     end_ymd: str = '3000-01-01',
     ):
     """
-       Produces the OLS Regression Summary Table
+       Produces OLS Regression Summary Table
     """
     def preprocess(df, price, start_ymd, end_ymd):
         # Filter dates
